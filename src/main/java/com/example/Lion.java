@@ -2,12 +2,11 @@ package com.example;
 
 import java.util.List;
 
-public class Lion  implements ILion  {
+public class Lion {
 
     boolean hasMane;
 
     public Lion(String sex, Feline feline) throws Exception {
-        this.feline=feline;
         if ("Самец".equals(sex)) {
             this.hasMane = true;
         } else if ("Самка".equals(sex)) {
@@ -17,17 +16,16 @@ public class Lion  implements ILion  {
         }
     }
 
-    Feline feline = new Feline();
-
-    public int getKittens() {
-        return feline.getKittens();
+    public int getKittens() throws Exception {
+        return getKittens();
     }
 
     public boolean doesHaveMane() {
         return hasMane;
     }
 
-    public List<String> getFood() throws Exception {
+    public List<String> getFood(Feline feline) throws Exception {
+        //Feline feline = new Feline();
         return feline.getFood("Хищник");
     }
 }
